@@ -106,6 +106,7 @@ $(document).keyup(function(e) {
 
 $('#backCalendar').click(function() {
     if ( this.id === "backCalendar") {
+
         $(".data-display").animate({
             height: 'toggle',
             opacity: 'toggle'
@@ -116,6 +117,18 @@ $('#backCalendar').click(function() {
         }, 'slow');
     }
 });
+
+$('#returnHome').click(function() {
+
+        $(".data-logic").animate({
+            opacity: 'toggle'
+        }, 'slow');
+
+        $(".calendar").animate({
+            opacity: 'toggle'
+        }, 'slow');
+});
+
 
 
 $("#add-user-data-btn").click(function() {

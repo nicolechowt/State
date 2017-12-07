@@ -3,10 +3,6 @@
 
 <head>
     <title>Date Entry</title>
-    <!-- for google integration sign in -->
-    <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- CSS Style Pages -->
@@ -16,9 +12,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans" rel="stylesheet">
-    <!-- JS script -->
-    <!-- Firebase Reference -->
-    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -118,7 +111,7 @@
 <script src="https://cdn.firebase.com/libs/firebaseui/2.4.0/firebaseui.js"></script>
 <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.4.0/firebaseui.css" />
 <!-- Firebase SDK -->
-<script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
 
  <script type="text/javascript">
 
@@ -138,17 +131,15 @@ if(mm<10) {
 today = mm + '-' + dd + '-' + yyyy;
 
 
-
-var config = {
-apiKey: "AIzaSyA-IZ3RaOqL0cyNzDi4-qMm7bVjBPZKKXQ",
-authDomain: "testprojecttohelpm.firebaseapp.com",
-databaseURL: "https://testprojecttohelpm.firebaseio.com",
-projectId: "testprojecttohelpm",
-storageBucket: "testprojecttohelpm.appspot.com",
-messagingSenderId: "128970731317"
-};
-
-firebase.initializeApp(config);
+  var config = {
+    apiKey: "AIzaSyA-IZ3RaOqL0cyNzDi4-qMm7bVjBPZKKXQ",
+    authDomain: "testprojecttohelpm.firebaseapp.com",
+    databaseURL: "https://testprojecttohelpm.firebaseio.com",
+    projectId: "testprojecttohelpm",
+    storageBucket: "testprojecttohelpm.appspot.com",
+    messagingSenderId: "128970731317"
+  };
+  firebase.initializeApp(config);
 
 
         var database = firebase.database();
@@ -250,8 +241,6 @@ firebase.initializeApp(config);
 
                 $(document).on("click", "#add-user-data-btn", function(event){
 
-  
-
                     var datesInArray=[];
                     var symptomsInArray=[];
                     var weatherInArray=[];
@@ -294,12 +283,9 @@ firebase.initializeApp(config);
                                         }
 
                                     }
-                                }
-                                
-                                $(".data-logic").append("<br>You have experienced this symptom on " + experiencedBefore + " and the high temp was " + historicalHighTemp + "." + "On " + highHR.length + " of those days, your resting HR was higher than  65.");
-                                console.log("You have experienced this symptom on " + experiencedBefore + " and the high temp was " + historicalHighTemp);
-                                console.log("On " + highHR.length + " of those days, your resting HR was higher than  65" );   
+                                }                                
                             }
+                        $(".data-logic").append("<br>You have experienced this symptom on " + experiencedBefore + " and the high temp was " +historicalHighTemp + "." + "On " + highHR.length + " of those days, your resting HR was higher than  65.");
 
                     });
 
@@ -537,15 +523,13 @@ function signOut(){
     
     <div class="data-logic panel panel-default collapse fadeIn">
         <div class="panel-heading">
-            <h3 class="panel-title">Nicole Other </h3>
+            <h3 class="panel-title">Let's see...</h3>
             <h3 class='daySelected' value=""></h3>
         </div>
         <div class="panel-body">
-            <p>some logic.</p>
-            <button class="btn btn-default" id="backCalendar">Go Back To Calendar</button>
-
+            <p>some logic.</p>            
         </div>
-                        
+        <button class="btn btn-default" id="returnHome">OK</button>                        
     </div>
   
 
