@@ -4,7 +4,10 @@
 Application will combine manually entered user input and data from a hardware piece to submit a comprehensive user profile to “doctors”.
 Allow users to easily log and track their symptoms. Help users find a pattern or commonality between episodes. This can be done by analyzing previously stored data, both inputted by user and through Fitbit/weather APIs.
 
-##Current Features
+## Live Link
+https://nicolechowt.github.io/State/index.html
+
+## Current Features
 -Make AJAX calls to Fitbit API and store Fitbit data on Firebase data structure
 -Make AJAX calls to Wunderground Weather API Store weather/climate conditions on Firebase data structure
 -Allow users to input symptoms on any given day
