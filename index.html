@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans" rel="stylesheet">
+
+    <!-- FirebaseUI -->
+    <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
+
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -171,9 +176,6 @@ today = mm + '-' + dd + '-' + yyyy;
               // var errorMessage = error.message;
               // ...
             });
-
-            firebase.auth().createUserWithEmailAndPassword(email, password);
-
 
             console.log("this is firebase user " + firebase.User)
             console.log("Registration Completed." + " uid is " + uid);

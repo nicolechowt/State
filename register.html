@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+    <!-- firebase -->
+    <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
+
+</head>
+
     <body>
         <div class="container">
             <br>
@@ -45,11 +51,8 @@
                 </div>
             </div>
         </div>
-        <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
-        <script src="https://cdn.firebase.com/libs/firebaseui/2.4.0/firebaseui.js"></script>
-        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.4.0/firebaseui.css" />
-        <!-- Firebase SDK -->
-        <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
         
         <script>
           // Initialize Firebase
@@ -90,7 +93,8 @@
             });
 
         };
-        authCheck();
+        
+        //authCheck();
         
         $("#click-button").on("click", function() {
 
@@ -102,12 +106,21 @@
             password = $("#password").val().trim();
             var user = firebase.auth().currentUser;
 
-            database.ref(`users`).set({
-                name: name,
-                age: age,
-                email: email,
-                password: password
+            // database.ref(`users`).set({
+            //     name: name,
+            //     age: age,
+            //     email: email,
+            //     password: password
+            // });
+
+
+            firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+              // Handle Errors here.
+              var errorCode = error.code;
+              var errorMessage = error.message;
+              // ...
             });
+
 
             console.log("Registration Completed.");
             window.location.replace("login.html");
