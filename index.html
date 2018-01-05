@@ -187,17 +187,17 @@ today = mm + '-' + dd + '-' + yyyy;
             firebase.auth().onAuthStateChanged(function(user) {
                 var user = firebase.auth().currentUser;
                 if (user) {
-                  console.log(JSON.stringify(user) + " is logged in.");
+                  console.log(JSON.stringify(user.uid) + " is logged in.");
                     $(".signUp").detach();
                     $(".signIn").detach();
                     $(".signedUser").append("Hello, "+ user.email);
                 } else {
                   console.log("no one is logged in.");
                 }
-                if (user && user.uid != currentUID) {  
+                if (user.uid != currentUID) {  
                     currentUID = user.uid;
                 usersRef.child(currentUID).set({   //database.ref(`users`/ + {uid}).set({ //change .set from .push and added + {$uid}
-                    name: userName,
+                    name: user.displayName,
                 
                 });
                 
@@ -534,6 +534,7 @@ function signOut(){
             }
         })
         .done(function(response){
+            console.log("done ajx");
             usersRef.child(currentUID).child(today).update({ 
                 syncedEntries: { 
                     fitBit : {
