@@ -215,17 +215,21 @@ today = mm + '-' + dd + '-' + yyyy;
                           url: "https://api.fitbit.com/1/user/"+userId+"/activities/heart/date/2018-01-02/1w.json",
                           success:function(data, status, xhr){
 
-                            var actHeartData = data["activities-heart"];
-                            var todaysActHeartData = actHeartData[6];
-                            var restingHR = todaysActHeartData.value["restingHeartRate"];
-                            console.log("actHeartData"+ JSON.stringify(actHeartData));  
-                            console.log("todaysActHeartData"+ JSON.stringify(todaysActHeartData));  
-                            console.log("restingHR"+ JSON.stringify(restingHR));         
+     
                           }
                     })
                     .done(function(response){
                         console.log("done ajx");
-                        console.log("response " + JSON.stringify(response));
+                        console.log("response " + JSON.stringify(response))
+
+                        var actHeartData = response["activities-heart"];
+                        var todaysActHeartData = actHeartData[6];
+                        var restingHR = todaysActHeartData.value["restingHeartRate"];
+                        console.log("actHeartData"+ JSON.stringify(actHeartData));  
+                        console.log("todaysActHeartData"+ JSON.stringify(todaysActHeartData));  
+                        console.log("restingHR"+ JSON.stringify(restingHR));    
+
+
                         usersRef.child(currentUID).child(today).update({ 
                             syncedEntries: { 
                                 fitBit : {
