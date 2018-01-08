@@ -229,7 +229,7 @@ today = mm + '-' + dd + '-' + yyyy;
                         console.log("todaysActHeartData"+ JSON.stringify(todaysActHeartData));  
                         console.log("restingHR"+ JSON.stringify(restingHR));    
 
-                        usersRef.child(currentUID).child(today).push({ 
+                        usersRef.child(currentUID).child(today).update({ 
                             syncedEntries: { 
                                 fitBit : {
                                     restingHeartRate: restingHR,
@@ -290,7 +290,7 @@ today = mm + '-' + dd + '-' + yyyy;
                       method: "GET"
                     })  
                     .done(function(response) { 
-                        usersRef.child(currentUID).child(today).update({ 
+                        usersRef.child(currentUID).child(today).push({ 
                             syncedEntries: { 
                                 weather : {
                                     highTemp: response.history.dailysummary[0].maxtempi,
