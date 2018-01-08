@@ -214,7 +214,7 @@ today = mm + '-' + dd + '-' + yyyy;
                       beforeSend: function(request) {
                          request.setRequestHeader("Authorization", 'Bearer ' + access_token);
                       },
-                        url: "https://api.fitbit.com/1/user/"+userId+"/activities/heart/date/today/1d.json",
+                        url: "https://api.fitbit.com/1/user/"+userId+"/activities/heart/date/2018-01-07/1d.json",
                         success:function(data, status, xhr){
                           console.log("coming from ajax call data " + JSON.stringify(data));
                           console.log("extracted " + JSON.stringify(data.activities-heart[0].restingHeartRate));
