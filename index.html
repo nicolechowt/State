@@ -225,6 +225,7 @@ today = mm + '-' + dd + '-' + yyyy;
                     })
                     .done(function(response){
                         console.log("done ajx");
+                        console.log("response " + JSON.stringify(response));
                         usersRef.child(currentUID).child(today).update({ 
                             syncedEntries: { 
                                 fitBit : {
