@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -196,7 +195,7 @@ today = mm + '-' + dd + '-' + yyyy;
                 }
                 if (user.uid != currentUID) {  
                     currentUID = user.uid;
-                usersRef.child(currentUID).set({   //database.ref(`users`/ + {uid}).set({ //change .set from .push and added + {$uid}
+                usersRef.child(currentUID).update({   //database.ref(`users`/ + {uid}).set({ //change .set from .push and added + {$uid}
                     name: user.displayName,
                 
                 });
