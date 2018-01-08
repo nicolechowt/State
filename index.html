@@ -229,9 +229,7 @@ today = mm + '-' + dd + '-' + yyyy;
                         console.log("todaysActHeartData"+ JSON.stringify(todaysActHeartData));  
                         console.log("restingHR"+ JSON.stringify(restingHR));    
 
-                        var fitbitSync = usersRef.child(currentUID).child(today).push();
-
-                        fitbitSync.set({ 
+                        usersRef.child(currentUID).child(today).push({ 
                             syncedEntries: { 
                                 fitBit : {
                                     restingHeartRate: restingHR,
