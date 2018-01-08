@@ -168,7 +168,7 @@ today = mm + '-' + dd + '-' + yyyy;
         }, function(errorObject) {
             console.log("The read failed: " + errorObject.code);
         });
- var uiConfig = { 
+        var uiConfig = { 
             signInSuccessUrl: "index.html", //"index-JSON-test.html",
             signInOptions: [
                 //firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -200,6 +200,37 @@ today = mm + '-' + dd + '-' + yyyy;
                 
                 });
                 
+
+                  'use strict';
+                // fitbit API
+                var url = window.location.href;
+                console.log(url);
+                //access token from url
+                var access_token = url.split("#")[1].split("=")[1].split("&")[0];
+                // get userid
+                var userId = url.split("#")[1].split("=")[2].split("&")[0];
+                    $.ajax({
+                      type: 'GET',
+                      beforeSend: function(request) {
+                         request.setRequestHeader("Authorization", 'Bearer ' + access_token);
+                      },
+                        url: "https://api.fitbit.com/1/user/"+userId+"/activities/heart/date/today/1w.json",
+                        success:function(data, status, xhr){
+                          console.log("coming from ajax call " + JSON.stringify(data));
+                        }
+                    })
+                    .done(function(response){
+                        console.log("done ajx");
+                        usersRef.child(currentUID).child(today).update({ 
+                            syncedEntries: { 
+                                fitBit : {
+                                    restingHeartRate: "59",
+                                }
+                            }
+                        })
+                    });
+
+
                 $(document).on("click", "#add-user-data-btn", function(event){
                     var datesInArray=[];
                     var symptomsInArray=[];
@@ -514,34 +545,6 @@ function signOut(){
       <!-- Script -->
 
     <script>
-      'use strict';
-    // fitbit API
-    var url = window.location.href;
-    console.log(url);
-    //access token from url
-    var access_token = url.split("#")[1].split("=")[1].split("&")[0];
-    // get userid
-    var userId = url.split("#")[1].split("=")[2].split("&")[0];
-        $.ajax({
-          type: 'GET',
-          beforeSend: function(request) {
-             request.setRequestHeader("Authorization", 'Bearer ' + access_token);
-          },
-            url: "https://api.fitbit.com/1/user/"+userId+"/activities/heart/date/today/1w.json",
-            success:function(data, status, xhr){
-              console.log("coming from ajax call " + JSON.stringify(data));
-            }
-        })
-        .done(function(response){
-            console.log("done ajx");
-            usersRef.child(currentUID).child(today).update({ 
-                syncedEntries: { 
-                    fitBit : {
-                        restingHeartRate: "59",
-                    }
-                }
-            })
-        });
         //  $.ajax({
         //   type: 'GET',
         //   beforeSend: function(request) {
