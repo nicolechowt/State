@@ -224,7 +224,7 @@ today = mm + '-' + dd + '-' + yyyy;
                             console.log("todaysActHeartData"+ JSON.stringify(todaysActHeartData));  
                             console.log("restingHR"+ JSON.stringify(restingHR));         
                           }
-                    });
+                    })
                     .done(function(response){
                         console.log("done ajx");
                         usersRef.child(currentUID).child(today).update({ 
