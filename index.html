@@ -229,12 +229,10 @@ today = mm + '-' + dd + '-' + yyyy;
                         console.log("todaysActHeartData"+ JSON.stringify(todaysActHeartData));  
                         console.log("restingHR"+ JSON.stringify(restingHR));    
 
-                        usersRef.child(currentUID).child(today).update({ 
-                            syncedEntries: { 
+                        usersRef.child(currentUID).child(today).push({ 
                                 fitBit : {
                                     restingHeartRate: restingHR,
                                 }
-                            }
                         })
                     });
 
@@ -252,8 +250,8 @@ today = mm + '-' + dd + '-' + yyyy;
                         datesInArray.push(snapshot.key);
                         symptomsInArray.push(JSON.stringify(snapshot.val()));
                         // symptomsInArray.push(JSON.stringify(snapshot.val().manualEntries.symptoms));
-                        weatherInArray.push(JSON.stringify(snapshot.val().syncedEntries.weather.highTemp));
-                        hrInArray.push(JSON.stringify(snapshot.val().syncedEntries.fitbit.restingHR));
+                        weatherInArray.push(JSON.stringify(snapshot.val().weather.highTemp));
+                        hrInArray.push(JSON.stringify(snapshot.val().fitbit.restingHeartRate));
                             // console.log("sleepInArray one " + sleepInArray); 
                     }); 
                     UIDRef.on("value", function(snapshot){
@@ -291,12 +289,10 @@ today = mm + '-' + dd + '-' + yyyy;
                     })  
                     .done(function(response) { 
                         usersRef.child(currentUID).child(today).push({ 
-                            syncedEntries: { 
                                 weather : {
                                     highTemp: response.history.dailysummary[0].maxtempi,
                                     lowTemp: response.history.dailysummary[0].mintempi,
                                 }
-                            }
                         })
                     });
                     // $.ajax({
