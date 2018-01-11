@@ -39,7 +39,7 @@
             <!-- link collection -->
             <div class="collapse navbar-collapse" id="navbar-collapse-login">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="https://www.fitbit.com/oauth2/authorize?response_type=token&client_id=228M7G&redirect_uri=https%3A%2F%2Fnicolechowt.github.io%2FState%2Findex.html&scope=activity%20heartrate%20location%20nutrition%20profile%20settings%20sleep%20social%20weight&expires_in=604800"> 
+                    <li><a href="https://www.fitbit.com/oauth2/authorize?response_type=token&client_id=228M7G&redirect_uri=https%3A%2F%2Fnicolechowt.github.io%2FState%2Findex.html&scope=activity%20heartrate%20location%20nutrition%20profile%20settings%20sleep%20social%20weight&expires_in=604800" class="btn fitBitBtn" style="display: none"> 
                     <span class="glyphicon glyphicon-refresh"></span> Sync with your FitBit</a>
                     </li>
                         <li><a href="#" role="button" class="btn signUp" data-toggle="modal" data-target="#register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -189,9 +189,13 @@ today = mm + '-' + dd + '-' + yyyy;
                   console.log(JSON.stringify(user.uid) + " is logged in.");
                     $(".signUp").detach();
                     $(".signIn").detach();
+                    $(".signOut").show();
+                    $(".fitBitBtn").show();
                     $(".signedUser").append("Hello, "+ user.email);
                 } else {
                   console.log("no one is logged in.");
+                   $(".signOut").toggle();
+                  
                 }
                 if (user.uid != currentUID) {  
                     currentUID = user.uid;
@@ -214,29 +218,24 @@ today = mm + '-' + dd + '-' + yyyy;
                       },
                           url: "https://api.fitbit.com/1/user/"+userId+"/activities/heart/date/2018-01-02/1w.json",
                           success:function(data, status, xhr){
-
      
                           }
                     })
                     .done(function(response){
                         console.log("done ajx");
                         console.log("response " + JSON.stringify(response))
-
                         var actHeartData = response["activities-heart"];
                         var todaysActHeartData = actHeartData[6];
                         var restingHR = todaysActHeartData.value["restingHeartRate"];
                         console.log("actHeartData"+ JSON.stringify(actHeartData));  
                         console.log("todaysActHeartData"+ JSON.stringify(todaysActHeartData));  
                         console.log("restingHR"+ JSON.stringify(restingHR));    
-
                         usersRef.child(currentUID).child(today).update({ 
                                 fitBit : {
                                     restingHeartRate: restingHR,
                                 }
                         })
                     });
-
-
                 $(document).on("click", "#add-user-data-btn", function(event){
                     var datesInArray=[];
                     var symptomsInArray=[];
@@ -352,7 +351,8 @@ today = mm + '-' + dd + '-' + yyyy;
                     console.log("snapshot.val().name " + snapshot.val().name);
                     $(".signUp").detach();
                     $(".signIn").detach();
-                    // $(".signedUser").append("Hello, "+ snapshot.val().name);
+                    $(".fitBitBtn").show();
+                    $(".signedUser").append("Hello, "+ snapshot.val().name);
                 });
             } else {  
                 currentUID = null;  
