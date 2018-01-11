@@ -191,7 +191,6 @@ today = mm + '-' + dd + '-' + yyyy;
                     $(".signIn").detach();
                     $(".signOut").show();
                     $(".fitBitBtn").show();
-                    $(".signedUser").html("Hello, "+ user.email);
                 } else {
                   console.log("no one is logged in.");
                    $(".signOut").toggle();
@@ -352,7 +351,7 @@ today = mm + '-' + dd + '-' + yyyy;
                     $(".signUp").detach();
                     $(".signIn").detach();
                     $(".fitBitBtn").show();
-                    $(".signedUser").append("Hello, "+ snapshot.val().name);
+                    $(".signedUser").html("Hello, "+ snapshot.val().name);
                 });
             } else {  
                 currentUID = null;  
