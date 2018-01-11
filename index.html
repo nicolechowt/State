@@ -191,7 +191,7 @@ today = mm + '-' + dd + '-' + yyyy;
                     $(".signIn").detach();
                     $(".signOut").show();
                     $(".fitBitBtn").show();
-                    $(".signedUser").append("Hello, "+ user.email);
+                    $(".signedUser").html("Hello, "+ user.email);
                 } else {
                   console.log("no one is logged in.");
                    $(".signOut").toggle();
