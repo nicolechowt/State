@@ -6,7 +6,7 @@ Allow users to easily log and track their symptoms. Help users find a pattern or
 
 ## Demo
 Data Entry
-![Data Entry Demo](https://gfycat.com/PitifulHandmadeKob)
+![Data Entry Demo](https://thumbs.gfycat.com/PitifulHandmadeKob-size_restricted.gif)
 
 ## Live Link
 https://nicolechowt.github.io/State/index.html
