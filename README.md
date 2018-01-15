@@ -5,7 +5,7 @@ State is a web-application that combines manually entered inputs as well as API 
 
 ## Demo
 To use the application, the user must sign up through our sign up page.
-![Sign Up]<img src="https://thumbs.gfycat.com/PoliteDigitalAmoeba-size_restricted.gif" width="500" height="400" />
+<img src="https://thumbs.gfycat.com/PoliteDigitalAmoeba-size_restricted.gif" width="500" height="400" />
 
 Once registered, our database will now recognize this user and save his/her information under the unique user ID.
 ![Firebase Auth](https://github.com/nicolechowt/State/blob/master/readmefiles/firebaseAuth.jpg)
@@ -13,10 +13,10 @@ Once registered, our database will now recognize this user and save his/her info
 If the user has a Fitbit wearable, user may log in to grant read access to our application. User can then sync their health and fitness information with our database. Doing so will help our application to better understand the user's condition and monitor any unusual biomarker trends. 
 
 If a symptom is experienced, user can go to the calendar page and manually add an entry to log his/her symptom. Upon the submitting this form, our application will make an AJAX call to the weather API to obtain the weather information in the area. The weather in the area could have a correlation to certain health issues.
-![Data Entry Demo]<img src="https://thumbs.gfycat.com/PitifulHandmadeKob-size_restricted.gif" width="500" height="400" />
+<img src="https://thumbs.gfycat.com/PitifulHandmadeKob-size_restricted.gif" width="500" height="400" />
 
 At anytime, the user may go back to a previous day to review the symptoms experienced. We used D3 to graph and visualize the data.
-![Historical Data]<img src="https://thumbs.gfycat.com/VigorousSociableGrebe-size_restricted.gif" width="500" height="400" />
+<img src="https://thumbs.gfycat.com/VigorousSociableGrebe-size_restricted.gif" width="500" height="400" />
 
 
 ## Live Link
