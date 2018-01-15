@@ -4,6 +4,10 @@
 Application will combine manually entered user input and data from a hardware piece to submit a comprehensive user profile to “doctors”.
 Allow users to easily log and track their symptoms. Help users find a pattern or commonality between episodes. This can be done by analyzing previously stored data, both inputted by user and through Fitbit/weather APIs.
 
+## Demo
+Data Entry
+https://gfycat.com/PitifulHandmadeKob
+
 ## Live Link
 https://nicolechowt.github.io/State/index.html
 
