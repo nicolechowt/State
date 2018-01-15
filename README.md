@@ -5,9 +5,8 @@ Application will combine manually entered user input and data from a hardware pi
 Allow users to easily log and track their symptoms. Help users find a pattern or commonality between episodes. This can be done by analyzing previously stored data, both inputted by user and through Fitbit/weather APIs.
 
 ## Demo
-Data Entry
-![Data Entry Demo](https://thumbs.gfycat.com/PitifulHandmadeKob-size_restricted.gif)
-<img src="https://thumbs.gfycat.com/PitifulHandmadeKob-size_restricted.gif" width="700" height="500" />
+Data Entry Demo
+<img src="https://thumbs.gfycat.com/PitifulHandmadeKob-size_restricted.gif" width="500" height="400" />
 
 
 ## Live Link
