@@ -187,6 +187,7 @@ today = mm + '-' + dd + '-' + yyyy;
                 var user = firebase.auth().currentUser;
                 if (user) {
                   console.log(JSON.stringify(user.uid) + " is logged in.");
+                    $(".signedUser").html("Hello, "+ user.email);
                     $(".signUp").detach();
                     $(".signIn").detach();
                     $(".signOut").show();
