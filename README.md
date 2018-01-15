@@ -16,6 +16,7 @@ If a symptom is experienced, user can go to the calendar page and manually add a
 <img src="https://thumbs.gfycat.com/PitifulHandmadeKob-size_restricted.gif" width="500" height="400" />
 
 At anytime, the user may go back to a previous day to review the symptoms experienced. We used D3 to graph and visualize the data.
+
 <img src="https://thumbs.gfycat.com/VigorousSociableGrebe-size_restricted.gif" width="500" height="400" />
 
 
@@ -30,15 +31,6 @@ https://nicolechowt.github.io/State/index.html
 -Perform analysis and inform the user whether it thinks there has been any ties between this episode and a previous episode. 
 -Utilize D3 to generate graphs for both doctors and users
 
-## Features for next iteration
--Social network/support group
--Allow users to search with a keyword or hashtag a specific symptom experienced
--Geolocation/google maps API
--Using Google Maps API to allow users to “anonymously” report an illness at a given location. Display such data on a heat map
--Twitter API
--Incorporating Twitter API for trending keywords
--Display user’s live HR 
-
 ## APIs Used
 -Weather
 -Fitbit
@@ -52,4 +44,13 @@ https://nicolechowt.github.io/State/index.html
 
 ## Technologies Used
 firebase
+
+## Features for next iteration
+-Social network/support group
+-Allow users to search with a keyword or hashtag a specific symptom experienced
+-Geolocation/google maps API
+-Using Google Maps API to allow users to “anonymously” report an illness at a given location. Display such data on a heat map
+-Twitter API
+-Incorporating Twitter API for trending keywords
+-Display user’s live HR 
 
