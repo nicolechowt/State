@@ -16,6 +16,7 @@ If the user has a Fitbit wearable, user may log in to grant read access to our a
 
 If a symptom is experienced, user can go to the calendar page and manually add an entry to log his/her symptom. Upon the submitting this form, our application will make an AJAX call to the weather API to obtain the weather information in the area. The weather in the area could have a correlation to certain health issues.
 <img src="https://thumbs.gfycat.com/PitifulHandmadeKob-size_restricted.gif" width="500" height="400" />
+<img src="https://media.giphy.com/media/l0DAHI9HTFxi9kk5a/giphy.gif" width="500" height="400" />
 
 A screenshot of the database structure.
 ![Firebase Data](https://github.com/nicolechowt/State/blob/master/readmefiles/firebaseData.png)
