@@ -14,8 +14,8 @@
     <link href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans" rel="stylesheet">
 
     <!-- FirebaseUI -->
-    <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
+    <script src="https://cdn.firebase.com/libs/firebaseui/2.6.0/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.6.0/firebaseui.css" />
 
 </head>
 
@@ -116,7 +116,7 @@
 <script src="https://cdn.firebase.com/libs/firebaseui/2.4.0/firebaseui.js"></script>
 <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.4.0/firebaseui.css" />
 <!-- Firebase SDK -->
-<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
 
  <script type="text/javascript">
 var today = new Date();
@@ -130,6 +130,7 @@ if(mm<10) {
     mm = '0'+mm
 } 
 today = mm + '-' + dd + '-' + yyyy;
+
   var config = {
     apiKey: "AIzaSyA-IZ3RaOqL0cyNzDi4-qMm7bVjBPZKKXQ",
     authDomain: "testprojecttohelpm.firebaseapp.com",
@@ -139,6 +140,7 @@ today = mm + '-' + dd + '-' + yyyy;
     messagingSenderId: "128970731317"
   };
   firebase.initializeApp(config);
+
         var database = firebase.database();
         var usersRef = firebase.database().ref("users");        
         var manualEntries;
@@ -174,6 +176,7 @@ today = mm + '-' + dd + '-' + yyyy;
                 //firebase.auth.GoogleAuthProvider.PROVIDER_ID,
                 firebase.auth.EmailAuthProvider.PROVIDER_ID
             ],
+            'credentialHelper': firebaseui.auth.CredentialHelper.NONE
         };
         var ui = new firebaseui.auth.AuthUI(firebase.auth());
         ui.start("#login-app", uiConfig, initApp);
